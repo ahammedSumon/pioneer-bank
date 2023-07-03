@@ -13,3 +13,19 @@ body{
 #transection{
     display: none;
 }
+.diposite{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+}
+.status{
+    margin: 0 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}

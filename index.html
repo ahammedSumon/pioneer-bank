@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div id="login-area">
         <h1 class="title">welcome to pioneer bank</h1>
         <div class="submit-area">
@@ -21,17 +23,70 @@
         </div>
     </div>
     <div id="transection">
-        <h1>Transection-Area</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="diposite status">
+                    <h5>Diposite</h5>
+                    <h2>$ <span id="currentDiposite">00</span></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw status">
+                    <h5>Withdraw</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="status balance">
+                    <h5>Balance</h5>
+                    <h2>$1240</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Diposite</h4>
+                    <input id="cap-dip" type="text" class="form-control" placeholder="Enter the amount of diposite">
+                    <br>
+                    <button id="add-dipo" class="btn btn-success">Diposite</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Withdraw</h4>
+                    <input type="text" class="form-control" placeholder="Enter the amount of withdraw">
+                    <br>
+                    <button class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
-        const  loginBtn=document.getElementById("login");
-        loginBtn.addEventListener("click", function(){
-            console.log("cholei jodi jaba tobe life a asla kno!");
-        
-        const loginArea=document.getElementById("login-area").style.display="none";
+        // log in button event handeler
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click", function () {
+            // console.log("cholei jodi jaba tobe life a asla kno!");
 
-        const transectionArea=document.getElementById("transection").style.display="block";
+            const loginArea = document.getElementById("login-area").style.display = "none";
+
+            const transectionArea = document.getElementById("transection").style.display = "block";
         })
+
+        // diposite button event handeler
+        const dipositeBtn = document.getElementById("add-dipo");
+        dipositeBtn.addEventListener("click", function () {
+            const dipositeAmount = document.getElementById("cap-dip").value;
+            const dipositeNumber = parseFloat(dipositeAmount);
+
+            const currentDiposite = document.getElementById("currentDiposite").innerText;
+            const currentDipositeNumber = parseFloat(currentDiposite);
+            const totalDiposite = dipositeNumber + currentDipositeNumber;
+            document.getElementById("currentDiposite").innerText = totalDiposite;
+        })
+
+
     </script>
 </body>
+
 </html>
